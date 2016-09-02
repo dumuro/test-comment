@@ -14,7 +14,7 @@ class m160902_072914_add_topic extends Migration
             'alias'        => 'topic1',
             'text'         => $this->getText(),
             'is_published' => 1,
-            'author'       => 'Александр',
+            'author'       => 'Alex',
             'create_date'  => new \yii\db\Expression('NOW()')
         ]);
         $this->insert('topic',[
@@ -22,7 +22,7 @@ class m160902_072914_add_topic extends Migration
             'alias'        => 'topic2',
             'text'         => $this->getText(),
             'is_published' => 1,
-            'author'       => 'Александр',
+            'author'       => 'Alex',
             'create_date'  => new \yii\db\Expression('NOW()')
         ]);
         $this->insert('topic',[
@@ -30,7 +30,7 @@ class m160902_072914_add_topic extends Migration
             'alias'        => 'topic3',
             'text'         => $this->getText(),
             'is_published' => 1,
-            'author'       => 'Александр',
+            'author'       => 'Alex',
             'create_date'  => new \yii\db\Expression('NOW()')
         ]);
         $this->insert('topic',[
@@ -38,7 +38,7 @@ class m160902_072914_add_topic extends Migration
             'alias'        => 'topic4',
             'text'         => $this->getText(),
             'is_published' => 1,
-            'author'       => 'Александр',
+            'author'       => 'Alex',
             'create_date'  => new \yii\db\Expression('NOW()')
         ]);
         $this->insert('topic',[
@@ -46,7 +46,7 @@ class m160902_072914_add_topic extends Migration
             'alias'        => 'topic5',
             'text'         => $this->getText(),
             'is_published' => 1,
-            'author'       => 'Александр',
+            'author'       => 'Alex',
             'create_date'  => new \yii\db\Expression('NOW()')
         ]);
     }
