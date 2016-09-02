@@ -89,3 +89,32 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+.breadcrumb{
+    margin-top: 75px;
+}
+
+.topic-list{
+    list-style: none;
+}
+.topic-list li{
+    border-bottom: 1px dotted #3C578C;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+.topic-list li .title{
+    font-size: 24px;
+}
+.topic-list li time{
+    padding-top: 10px;
+    font-style: italic;
+}
+.site-view{
+    margin-top: 75px;
+}
+.site-view .title{
+    font-size: 24px;
+}
+.site-view time{
+    font-style: italic;
+}

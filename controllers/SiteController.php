@@ -2,13 +2,18 @@
 
 namespace app\controllers;
 
+use app\models\Comments;
+use app\models\Topic;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
+use yii\web\NotFoundHttpException;
 
+/**
+ * Class SiteController
+ * @package app\controllers
+ */
 class SiteController extends Controller
 {
     /**
@@ -38,88 +43,40 @@ class SiteController extends Controller
     }
 
     /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-            'captcha' => [
-                'class' => 'yii\captcha\CaptchaAction',
-                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
-            ],
-        ];
-    }
-
-    /**
      * Displays homepage.
      *
      * @return string
      */
     public function actionIndex()
     {
-        return $this->render('index');
-    }
+        $model = new Topic();
+        $dataProvider = $model->search();
 
-    /**
-     * Login action.
-     *
-     * @return string
-     */
-    public function actionLogin()
-    {
-        if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
-        }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
-        }
-        return $this->render('login', [
+        return $this->render('index',[
             'model' => $model,
+            'dataProvider' => $dataProvider
         ]);
     }
 
     /**
-     * Logout action.
-     *
+     * @param $id
      * @return string
+     * @throws NotFoundHttpException
      */
-    public function actionLogout()
+    public function actionView($id)
     {
-        Yii::$app->user->logout();
+        /** @var $model Topic */
+        $model = Topic::find()->where(['id' => $id, 'is_published' => 1])->one();
+        if( $model === null )
+            throw new NotFoundHttpException('Статья не найдна');
 
-        return $this->goHome();
-    }
+        $comments = new Comments();
+        $search   = $comments->search($model->id);
 
-    /**
-     * Displays contact page.
-     *
-     * @return string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
+        return $this->render('view',[
             'model' => $model,
+            'comments' => $comments,
+            'search' => $search
         ]);
-    }
-
-    /**
-     * Displays about page.
-     *
-     * @return string
-     */
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 }

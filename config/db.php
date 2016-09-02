@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'class'    => 'yii\db\Connection',
+    'dsn'      => 'mysql:host=localhost;dbname=test_comment',
     'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8',
+    'password' => '0142536',
+    'charset'  => 'utf8',
 ];
