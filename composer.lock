@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ec88964c4e81fddffb7e80ed3804b172",
-    "content-hash": "da2bb38efa3a0b1aa040f00af084eec8",
+    "hash": "23921b100d0389135bca7327936f27c9",
+    "content-hash": "90a40875800043222a1f610f8621b735",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -300,6 +300,54 @@
             "time": "2016-07-16 12:58:58"
         },
         {
+            "name": "himiklab/yii2-recaptcha-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/himiklab/yii2-recaptcha-widget.git",
+                "reference": "0e13a167b408f979b2c5ea5ceb444d169902570c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/himiklab/yii2-recaptcha-widget/zipball/0e13a167b408f979b2c5ea5ceb444d169902570c",
+                "reference": "0e13a167b408f979b2c5ea5ceb444d169902570c",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "require-dev": {
+                "phpunit/dbunit": ">=1.2",
+                "phpunit/phpunit": ">=3.7",
+                "phpunit/phpunit-selenium": ">=1.2"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "himiklab\\yii2\\recaptcha\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "HimikLab",
+                    "homepage": "https://github.com/himiklab/"
+                }
+            ],
+            "description": "Yii2 Google reCAPTCHA widget",
+            "keywords": [
+                "captcha",
+                "google",
+                "recaptcha",
+                "widget",
+                "yii2"
+            ],
+            "time": "2016-06-10 15:38:28"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -358,12 +406,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "e43bac3dc047b1cf5f14eba8651ba3806f65b8a3"
+                "reference": "82074ae33ba2aebd408c939bfa6de6b028be70ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e43bac3dc047b1cf5f14eba8651ba3806f65b8a3",
-                "reference": "e43bac3dc047b1cf5f14eba8651ba3806f65b8a3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/82074ae33ba2aebd408c939bfa6de6b028be70ac",
+                "reference": "82074ae33ba2aebd408c939bfa6de6b028be70ac",
                 "shasum": ""
             },
             "require": {
@@ -444,7 +492,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-09-01 20:50:05"
+            "time": "2016-09-02 09:05:33"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -596,57 +644,6 @@
     ],
     "packages-dev": [
         {
-            "name": "asofter/yii2-imperavi-redactor",
-            "version": "dev-master",
-            "target-dir": "yii/imperavi",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/asofter/yii2-imperavi-redactor.git",
-                "reference": "ce0a7b3a79d5c080e5018ae7201e667407788f90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/asofter/yii2-imperavi-redactor/zipball/ce0a7b3a79d5c080e5018ae7201e667407788f90",
-                "reference": "ce0a7b3a79d5c080e5018ae7201e667407788f90",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-0": {
-                    "yii\\imperavi\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Alexander Yaremchuk",
-                    "email": "alwex10@gmail.com"
-                },
-                {
-                    "name": "Veaceslav Medvedev",
-                    "email": "slavcopost@gmail.com"
-                },
-                {
-                    "name": "Alexander Makarov",
-                    "email": "sam@rmcreative.ru",
-                    "homepage": "http://rmcreative.ru/"
-                }
-            ],
-            "description": "Imperavi Redactor WYSIWYG widget (OEM-licensed for Yii 2)",
-            "keywords": [
-                "imperavi",
-                "imperavi redactor",
-                "yii"
-            ],
-            "time": "2016-01-16 20:16:36"
-        },
-        {
             "name": "behat/gherkin",
             "version": "dev-master",
             "source": {
@@ -730,40 +727,6 @@
             "type": "bower-asset-library",
             "extra": {
                 "bower-asset-main": "dist/typeahead.bundle.js"
-            }
-        },
-        {
-            "name": "bower-asset/x-editable",
-            "version": "1.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vitalets/x-editable.git",
-                "reference": "f32802f48a33b8a7ec9cca32eec4ca844b7d39b2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vitalets/x-editable/zipball/f32802f48a33b8a7ec9cca32eec4ca844b7d39b2",
-                "reference": "f32802f48a33b8a7ec9cca32eec4ca844b7d39b2",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/jquery": ">=1.6"
-            },
-            "type": "bower-asset-library",
-            "extra": {
-                "bower-asset-ignore": [
-                    "CHANGELOG.txt",
-                    "Gruntfile.js",
-                    "LICENSE-MIT",
-                    "Package.nuspec",
-                    "README.md",
-                    "composer.json",
-                    "package.json",
-                    "node_modules",
-                    "components",
-                    "src",
-                    "test"
-                ]
             }
         },
         {
@@ -1138,59 +1101,6 @@
                 "object graph"
             ],
             "time": "2015-11-20 12:04:31"
-        },
-        {
-            "name": "nesbot/carbon",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7a026991092624a245d300685ce09ff5b4d110e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7a026991092624a245d300685ce09ff5b4d110e0",
-                "reference": "7a026991092624a245d300685ce09ff5b4d110e0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0",
-                "symfony/translation": "~2.6|~3.0"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "~1.11",
-                "phpunit/phpunit": "~4.0|~5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.22-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Carbon\\": "src/Carbon/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Nesbitt",
-                    "email": "brian@nesbot.com",
-                    "homepage": "http://nesbot.com"
-                }
-            ],
-            "description": "A simple API extension for DateTime.",
-            "homepage": "http://carbon.nesbot.com",
-            "keywords": [
-                "date",
-                "datetime",
-                "time"
-            ],
-            "time": "2016-07-22 14:20:35"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2779,70 +2689,6 @@
             "time": "2016-08-30 17:06:17"
         },
         {
-            "name": "symfony/translation",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "b11cc1b91323f78f67e7f4d08bb639e3c24169e0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/b11cc1b91323f78f67e7f4d08bb639e3c24169e0",
-                "reference": "b11cc1b91323f78f67e7f4d08bb639e3c24169e0",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "conflict": {
-                "symfony/config": "<2.8"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/intl": "~2.8|~3.0",
-                "symfony/yaml": "~2.8|~3.0"
-            },
-            "suggest": {
-                "psr/log": "To use logging capability in translator",
-                "symfony/config": "",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Translation\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Translation Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-07-30 07:26:43"
-        },
-        {
             "name": "symfony/yaml",
             "version": "dev-master",
             "source": {
@@ -2946,176 +2792,6 @@
                 "validate"
             ],
             "time": "2016-08-18 09:30:53"
-        },
-        {
-            "name": "yii2mod/yii2-behaviors",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yii2mod/yii2-behaviors.git",
-                "reference": "36b8ccf1f1349d2d6ede68112c3b7a7aa9ff8f07"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yii2mod/yii2-behaviors/zipball/36b8ccf1f1349d2d6ede68112c3b7a7aa9ff8f07",
-                "reference": "36b8ccf1f1349d2d6ede68112c3b7a7aa9ff8f07",
-                "shasum": ""
-            },
-            "require": {
-                "nesbot/carbon": "~1.0",
-                "yiisoft/yii2": ">=2.0.5"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "yii2mod\\behaviors\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Semenov",
-                    "email": "disemx@gmail.com"
-                },
-                {
-                    "name": "Igor Chepurnoy",
-                    "email": "igorzfort@gmail.com"
-                }
-            ],
-            "description": "Yii2 behaviors",
-            "keywords": [
-                "extension",
-                "yii2"
-            ],
-            "time": "2016-07-05 12:12:12"
-        },
-        {
-            "name": "yii2mod/yii2-comments",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yii2mod/yii2-comments.git",
-                "reference": "0927020f6da9e754a669f97de3dcb088d39a6183"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yii2mod/yii2-comments/zipball/0927020f6da9e754a669f97de3dcb088d39a6183",
-                "reference": "0927020f6da9e754a669f97de3dcb088d39a6183",
-                "shasum": ""
-            },
-            "require": {
-                "asofter/yii2-imperavi-redactor": "*",
-                "yii2mod/yii2-behaviors": "*",
-                "yii2mod/yii2-editable": "*",
-                "yii2mod/yii2-enum": "*",
-                "yiisoft/yii2": ">=2.0.8"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "yii2mod\\comments\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Igor Chepurnoy",
-                    "email": "igorzfort@gmail.com"
-                }
-            ],
-            "description": "Comments module for Yii2",
-            "keywords": [
-                "extension",
-                "yii2"
-            ],
-            "time": "2016-08-20 20:38:07"
-        },
-        {
-            "name": "yii2mod/yii2-editable",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yii2mod/yii2-editable.git",
-                "reference": "422403f8a0437d519914b15a13b04b1b6a1b94f3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yii2mod/yii2-editable/zipball/422403f8a0437d519914b15a13b04b1b6a1b94f3",
-                "reference": "422403f8a0437d519914b15a13b04b1b6a1b94f3",
-                "shasum": ""
-            },
-            "require": {
-                "bower-asset/x-editable": "*",
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "yii2mod\\editable\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Igor Chepurnoi",
-                    "email": "igorzfort@gmail.com"
-                }
-            ],
-            "description": "Yii2 editable field extension",
-            "keywords": [
-                "extension",
-                "yii2"
-            ],
-            "time": "2016-07-01 15:45:09"
-        },
-        {
-            "name": "yii2mod/yii2-enum",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yii2mod/yii2-enum.git",
-                "reference": "32cdfa695f62c1a6dd8aa6aa36b0765ce33fdb01"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yii2mod/yii2-enum/zipball/32cdfa695f62c1a6dd8aa6aa36b0765ce33fdb01",
-                "reference": "32cdfa695f62c1a6dd8aa6aa36b0765ce33fdb01",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "yii2mod\\enum\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dmitry Semenov",
-                    "email": "disemx@gmail.com"
-                }
-            ],
-            "description": "Yii2 Enumerable helpers",
-            "keywords": [
-                "extension",
-                "yii2"
-            ],
-            "time": "2016-08-06 12:21:15"
         },
         {
             "name": "yiisoft/yii2-debug",

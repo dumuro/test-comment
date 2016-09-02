@@ -7,6 +7,8 @@ use yii\behaviors\TimestampBehavior;
 use app\behaviors\PurifyBehavior;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
+use app\validators\ReCaptchaValidator;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "comments".
@@ -26,6 +28,7 @@ use yii\db\ActiveRecord;
 class Comments extends \yii\db\ActiveRecord
 {
     protected $_children;
+    public $reCaptcha;
 
     /**
      * @inheritdoc
@@ -41,11 +44,13 @@ class Comments extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tid'], 'required'],
+            [['tid', 'name', 'email', 'text', 'reCaptcha'], 'required'],
             [['tid', 'pid', 'is_published'], 'integer'],
             [['text', 'create_date', 'update_date'], 'string'],
             [['name', 'email'], 'string', 'max' => 255],
-            ['pid', 'default', 'value' => 0]
+            ['pid', 'default', 'value' => 0],
+            ['email', 'email'],
+            [['reCaptcha'], ReCaptchaValidator::className()],
         ];
     }
 
@@ -58,12 +63,13 @@ class Comments extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'tid' => Yii::t('app', 'Tid'),
             'pid' => Yii::t('app', 'Pid'),
-            'name' => Yii::t('app', 'Name'),
+            'name' => Yii::t('app', 'Имя'),
             'email' => Yii::t('app', 'E-mail'),
-            'text' => Yii::t('app', 'Text'),
+            'text' => Yii::t('app', 'Текст'),
             'is_published' => Yii::t('app', 'Is Published'),
-            'create_date' => Yii::t('app', 'Create Date'),
-            'update_date' => Yii::t('app', 'Update Date'),
+            'create_date'  => Yii::t('app', 'Create Date'),
+            'update_date'  => Yii::t('app', 'Update Date'),
+            'reCaptcha'    => Yii::t('app', 'Captcha'),
         ];
     }
 
@@ -76,9 +82,13 @@ class Comments extends \yii\db\ActiveRecord
     {
         return [
             'timestamp' => [
-                'class' => TimestampBehavior::className(),
-                'createdAtAttribute' => 'create_date',
-                'updatedAtAttribute' => 'update_date'
+                'class' => 'yii\behaviors\TimestampBehavior',
+                'attributes' => [
+                    self::EVENT_BEFORE_INSERT => ['create_date'],
+                ],
+                'value' => function () {
+                    return new Expression('NOW()');
+                }
             ],
             'purify' => [
                 'class' => PurifyBehavior::className(),
@@ -272,6 +282,6 @@ class Comments extends \yii\db\ActiveRecord
      */
     public function getPostedDate()
     {
-        return Yii::$app->formatter->asRelativeTime($this->create_date);
+        return $this->create_date;
     }
 }

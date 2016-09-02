@@ -43,6 +43,12 @@ $config = [
             'showScriptName' => false,
             'rules' => [],
         ],
+        'reCaptcha' => [
+            'class'   => 'himiklab\yii2\recaptcha\ReCaptcha',
+            'name'    => 'reCaptcha',
+            'siteKey' => '6Le7JykTAAAAAIAlSaEGqjsvjhDh_REVnHq0XklI',
+            'secret'  => '6Le7JykTAAAAAAzFQOmR7R6cOwVf7M3uCCqhHgud',
+        ],
 
     ],
     'params' => $params,

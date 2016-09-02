@@ -19,6 +19,6 @@
         <?php echo $model->text ?>
     </div>
     <div>
-        <a href="#" class="btn btn-default">Читать далее</a>
+        <a href="<?= \yii\helpers\Url::to(['site/view', 'id' => $model->id]) ?>" class="btn btn-default">Читать далее</a>
     </div>
 </li>

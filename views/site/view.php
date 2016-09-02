@@ -4,6 +4,7 @@
  * @var $this \yii\web\View
  */
 $this->title = $model->name;
+Yii::$app->params['breadcrumbs'][] = $model->name;
 ?>
 <div class="site-view">
     <div class="title">

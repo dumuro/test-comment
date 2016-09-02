@@ -19,16 +19,17 @@ use yii\helpers\Url;
                     <?php if ($comment->is_published): ?>
                         <div class="comment-action-buttons">
                             <?php if ($comment->level < $maxLevel || is_null($maxLevel)): ?>
-                                <?php echo Html::a("<span class='glyphicon glyphicon-share-alt'></span> " . Yii::t('app', 'Reply'), '#', ['class' => 'comment-reply', 'data' => ['action' => 'reply', 'comment-id' => $comment->id]]); ?>
+                                <?php echo Html::a("<span class='glyphicon glyphicon-share-alt'></span> " . Yii::t('app', 'Ответить'), '#', ['class' => 'comment-reply', 'data' => ['action' => 'reply', 'comment-id' => $comment->id]]); ?>
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
                     <?php echo Html::tag('meta', null, ['content' => Yii::$app->formatter->asDatetime($comment->create_date, 'php:c'), 'itemprop' => 'dateCreated']); ?>
                     <?php echo Html::tag('meta', null, ['content' => Yii::$app->formatter->asDatetime($comment->update_date, 'php:c'), 'itemprop' => 'dateModified']); ?>
                     <div class="comment-author-name" itemprop="creator" itemscope itemtype="http://schema.org/Person">
-                        <span itemprop="name"><?php echo $comment->getAuthorsNames(); ?></span>
-                        <span class="comment-date">
-                            <?php echo $comment->getPostedDate(); ?>
+                        <span itemprop="name" style="font-style: italic;">Автор <?php echo $comment->getAuthorsNames(); ?></span>
+                        <span> | </span>
+                        <span class="comment-date" style="font-style: italic;">
+                            Создан <?php echo $comment->getPostedDate(); ?>
                         </span>
                     </div>
                     <div class="comment-body" itemprop="text">
@@ -40,6 +41,7 @@ use yii\helpers\Url;
                 <ul class="children">
                     <?php echo $this->render('_list', ['comments' => $comment->children, 'maxLevel' => $maxLevel]) ?>
                 </ul>
+                <hr />
             <?php endif; ?>
         </li>
     <?php endforeach; ?>

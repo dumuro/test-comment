@@ -97,21 +97,48 @@ a.desc:after {
 .topic-list{
     list-style: none;
 }
+
 .topic-list li{
     border-bottom: 1px dotted #3C578C;
     padding-top: 10px;
     padding-bottom: 15px;
 }
+
 .topic-list li .title{
     font-size: 24px;
 }
+
 .topic-list li time{
     padding-top: 10px;
     font-style: italic;
 }
+
 .site-view .title{
     font-size: 24px;
 }
+
 .site-view time{
     font-style: italic;
 }
+
+.comment-author-avatar{
+    width: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+.comment-details{
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    padding-bottom: 25px;
+    margin-left: 10px;
+}
+.comment-action-buttons{
+    float: right;
+    clear: right;
+}
+.comment-body{
+    margin-top: 25px;
+    margin-left: 3px;
+}
+
