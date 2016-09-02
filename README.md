@@ -38,6 +38,6 @@ INSTALLATION
 ------------
 
 1. git clone git@github.com:dumuro/test-comment.git OR download ZIP in folder.
-2. composer install
+2. cd folder project && composer install
 3. php yii migrate/up OR import dump database
 4. run browser project
