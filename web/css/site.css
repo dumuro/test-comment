@@ -141,4 +141,13 @@ a.desc:after {
     margin-top: 25px;
     margin-left: 3px;
 }
-
+.captcha .form-group{
+    width: 400px;
+}
+.captcha img{
+    display: inline-block;
+}
+.captcha input{
+    display: inline-block;
+    width: 200px;
+}

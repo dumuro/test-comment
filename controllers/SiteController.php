@@ -20,6 +20,19 @@ use yii\widgets\ActiveForm;
 class SiteController extends Controller
 {
     /**
+     * @return array
+     */
+    public function actions()
+    {
+        return [
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_DEBUG ? 'testme' : null,
+            ],
+        ];
+    }
+
+    /**
      * @inheritdoc
      */
     public function behaviors()

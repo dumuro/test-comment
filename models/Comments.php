@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use app\behaviors\PurifyBehavior;
+use yii\captcha\CaptchaValidator;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 use app\validators\ReCaptchaValidator;
@@ -50,7 +51,8 @@ class Comments extends \yii\db\ActiveRecord
             [['name', 'email'], 'string', 'max' => 255],
             ['pid', 'default', 'value' => 0],
             ['email', 'email'],
-            [['reCaptcha'], ReCaptchaValidator::className()],
+            [['reCaptcha'], 'captcha'],
+            [['reCaptcha'], CaptchaValidator::className()],
         ];
     }
 

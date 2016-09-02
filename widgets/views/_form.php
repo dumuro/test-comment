@@ -31,8 +31,8 @@ use yii\widgets\ActiveForm;
     <?php echo $form->field($commentModel, 'text', ['template' => '{input}{error}'])->textarea(['placeholder' => Yii::t('app', 'Add a comment...'), 'rows' => 4, 'data' => ['comment' => 'content']]) ?>
     <?php echo $form->field($commentModel, 'pid', ['template' => '{input}'])->hiddenInput(['data' => ['comment' => 'parent-id']]); ?>
     <?php echo $form->field($commentModel, 'tid', ['template' => '{input}'])->hiddenInput(['data' => ['comment' => 'topic-id']]); ?>
-    <div class="login-captcha">
-        <?= $form->field($commentModel, 'reCaptcha')->widget(\himiklab\yii2\recaptcha\ReCaptcha::className())->label(false); ?>
+    <div class="captcha" style="width: 100px">
+        <?= $form->field($commentModel, 'reCaptcha')->widget(\yii\captcha\Captcha::className())->label('Проверочный код') ?>
     </div>
     <div class="comment-box-partial">
         <div class="button-container show">
