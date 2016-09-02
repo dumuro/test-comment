@@ -10,6 +10,11 @@ class m160901_101518_comments extends Migration
 {
     public function up()
     {
+        $tableOptions = null;
+        if ($this->db->driverName === 'mysql') {
+            $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
+        }
+
         $this->createTable('comments', [
             'id'            => \yii\db\Schema::TYPE_PK,
             'tid'           => Schema::TYPE_INTEGER . ' NOT NULL COMMENT "Топик"',
@@ -20,7 +25,7 @@ class m160901_101518_comments extends Migration
             'is_published'  => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1 COMMENT "Опубликовано"',
             'create_date'   => Schema::TYPE_DATETIME   . ' NOT NULL COMMENT "Время создания"',
             'update_date'   => Schema::TYPE_TIMESTAMP   . ' NOT NULL COMMENT "Время обновления"'
-        ]);
+        ],$tableOptions);
 
         $this->createIndex('tid_key', 'comments', 'tid');
         $this->createIndex('pid_key', 'comments', 'pid');

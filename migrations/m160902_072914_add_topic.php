@@ -9,6 +9,7 @@ class m160902_072914_add_topic extends Migration
 {
     public function up()
     {
+
         $this->insert('topic',[
             'name'         => 'Lorem Ipsum1',
             'alias'        => 'topic1',
