@@ -18,6 +18,4 @@ $this->title = $model->name;
         <?php echo $model->text ?>
     </div>
 </div>
-<div class="comments">
-
-</div>
+<?= \app\widgets\CommentsWidget::widget(['tId' => $model->id]) ?>

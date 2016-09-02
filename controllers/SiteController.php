@@ -6,9 +6,12 @@ use app\models\Comments;
 use app\models\Topic;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 /**
  * Class SiteController
@@ -56,6 +59,21 @@ class SiteController extends Controller
             'model' => $model,
             'dataProvider' => $dataProvider
         ]);
+    }
+
+    public function actionCreate()
+    {
+        Yii::$app->response->format = Response::FORMAT_JSON;
+        $model = new Comments();
+        $model->setAttributes(Yii::$app->getRequest()->post());
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return ['status' => 'success'];
+        } else {
+            return [
+                'status' => 'error',
+                'errors' => ActiveForm::validate($model)
+            ];
+        }
     }
 
     /**
