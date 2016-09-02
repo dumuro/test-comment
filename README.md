@@ -16,16 +16,21 @@ DIRECTORY STRUCTURE
 -------------------
 
       assets/             contains assets definition
+      behaviors/          contains behaviors
       commands/           contains console commands (controllers)
       config/             contains application configurations
       controllers/        contains Web controller classes
       mail/               contains view files for e-mails
+      migrations/         contains migrations
       models/             contains model classes
       runtime/            contains files generated during runtime
+      sql/                contains dump mysql database
       tests/              contains various tests for the basic application
+      validators/         contains validators
       vendor/             contains dependent 3rd-party packages
       views/              contains view files for the Web application
       web/                contains the entry script and Web resources
+      widgets/            contains widgets
 
 
 REQUIREMENTS
